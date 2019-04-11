@@ -254,12 +254,12 @@ if __name__ == '__main__':
     # Run:
     import argparse
 
-    parse = argparse.ArgumentParser()
-    parse.add_argument('command', help='"compress" or "uncompress"')
-    parse.add_argument('-i', '--input', required=True, help='Input file path.')
-    parse.add_argument('-o', '--output', required=True, help='Output file path.')
+    parser = argparse.ArgumentParser()
+    parser.add_argument('command', help='"compress" or "uncompress"')
+    parser.add_argument('-i', '--input', required=True, help='Input file path.')
+    parser.add_argument('-o', '--output', required=True, help='Output file path.')
 
-    args = parse.parse_args()
+    args = parser.parse_args()
     hc = HuffmanCodec()
     if args.command == 'compress':
         hc.compress(args.input, args.output)
